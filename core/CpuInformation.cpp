@@ -25,7 +25,13 @@ uint32_t CpuInformation::coreCount() const {
 }
 
 std::string CpuInformation::model(uint32_t packageId) const {
-    return cpuinfo_get_package(packageId)->name;
+    auto packageInfo = cpuinfo_get_package(packageId);
+    
+    if (packageInfo) {
+        return cpuinfo_get_package(packageId)->name;
+    } else {
+        return "Unknown";
+    }
 }
 
 uint32_t CpuInformation::frequency() const {
