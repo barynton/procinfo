@@ -1,0 +1,7 @@
+[requires]
+catch2/3.3.2
+cli11/2.3.2
+cpuinfo/cci.20201217
+
+[generators]
+cmake
